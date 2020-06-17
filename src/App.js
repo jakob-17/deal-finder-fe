@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import SignIn from './components/SignIn/SignIn.js'
+import Home from './components/Home/Home.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const initialState = {
+  route: 'home',
+  isSignedIn: false,
+}
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = initialState;
+  }
+
+  onRouteChange = (route) => {
+    if (route === 'signin') {
+      this.setState(initialState)
+    } else if (route === 'home') {
+      this.setState({ isSignedIn: true })
+    }
+    this.setState({ route: route })
+  }
+
+  render() {
+    const { route, isSignedIn } = this.state;
+    return (
+      <div className="App">
+        {route === 'signin'
+        ? <div>
+            <SignIn onRouteChange={this.onRouteChange} />
+          </div>
+        : <div> {/*route === 'home'*/}
+            <Home onRouteChange={this.onRouteChange} onDealSubmit={this.onDealSubmit} />
+          </div>  
+        }
+      </div>
+    );
+  }
+
 }
 
 export default App;

@@ -1,0 +1,23 @@
+.signin {
+    color: rgb(133, 175, 204);
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+
+	display: inline-block;
+	margin: 10% 0 0 0;
+}
+
+.text {
+	float: left;
+}
+
+.box {
+	float: right;
+}
+
+.submit {
+	width: 25%;
+}

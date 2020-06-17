@@ -1,0 +1,34 @@
+.home {
+    color: rgb(133, 175, 204);
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+        1px 1px 0 #000;
+        
+        margin: 10% 0 0 0;
+}
+
+table, tr, th, td, .url, .price {
+    border: 1px solid black;
+    width: 35%;
+}
+
+thead {
+    text-align: center;
+    color: white;
+}
+
+tbody {
+    text-align: left;
+}
+
+.price {
+    text-align: center;
+    color: rgb(238, 230, 120);
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
